@@ -1,0 +1,15 @@
+{% if storage_audit.unreachable is defined %}
+{{ inventory_hostname }},OFFLINE,N/A,N/A,N/A,N/A,N/A,N/A,N/A
+{% else %}
+{% set audit = storage_audit.stdout | from_json %}
+{% for dev in audit.lsblk.blockdevices %}
+{% set lun = dev.hctl.split(':')[-1] if dev.hctl else 'OS/Temp' %}
+{% set is_mounted = "MOUNTED" if dev.mountpoints and dev.mountpoints[0] else "NOT MOUNTED" %}
+{% set in_fstab = "YES" if (dev.name in audit.fstab or (dev.uuid and dev.uuid in audit.fstab)) else "NO" %}
+{% set is_lvm = "YES" if dev.name in audit.lvm else "NO" %}
+{% set systemd_name = dev.name | replace('/', '-') + ".mount" %}
+{% set in_systemd = "YES" if systemd_name in audit.systemd else "NO" %}
+{{ inventory_hostname }},{{ inventory_hostname }},{{ lun }},{{ dev.name }},{{ dev.size }},{{ is_mounted }},{{ in_fstab }},{{ is_lvm }},{{ in_systemd }}
+{% endfor %}
+{% endif %}
+

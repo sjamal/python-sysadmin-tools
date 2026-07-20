@@ -1,0 +1,86 @@
+# Python .gitignore
+
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+PIPFILE.lock
+
+# Virtual environments
+venv/
+ENV/
+env/
+.venv
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Data files (keep structure, ignore generated files)
+data/processed/*
+data/raw/*.csv
+data/raw/*.xlsx
+
+# Output files
+output/
+results/
+*.png
+*.jpg
+*.jpeg
+*.html
+*.csv
+*.xlsx
+
+# Generated audit reports (audit_sles_disks scripts output)
+audit_sles_disks/reports/*.out
+audit_sles_disks/reports/*.min
+
+# Audit input data — contains internal IP addresses; store outside the repo
+audit_sles_disks/audit_data/
+
+# Environment variables
+.env
+.env.local
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+*.log
