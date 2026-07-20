@@ -169,8 +169,15 @@ Contributions welcome! Please ensure:
 
 ## See Also
 
-- [ansible/disk_reports](https://github.com/sjamal/ansible) — Ansible playbooks for collecting raw audit data
-- [python](https://github.com/sjamal/python) — Broader Python utilities collection
+**Python ecosystem:**
+- [python-data-processing](https://github.com/sjamal/python-data-processing) — ETL and data transformation pipelines
+- [python-machine-learning](https://github.com/sjamal/python-machine-learning) — Model training and evaluation scripts
+- [python-visualization](https://github.com/sjamal/python-visualization) — Data visualization scripts
+- [python-utilities](https://github.com/sjamal/python-utilities) — Shared helper functions
+- [python-youtube-tools](https://github.com/sjamal/python-youtube-tools) — YouTube API data collection
+
+**Enterprise integrations:**
+- [ansible](https://github.com/sjamal/ansible) — Ansible playbooks for collecting raw audit data
 - [hybrid-governance-automation](https://github.com/sjamal/hybrid-governance-automation) — Enterprise automation framework that can invoke these tools
 
 ## Questions?
